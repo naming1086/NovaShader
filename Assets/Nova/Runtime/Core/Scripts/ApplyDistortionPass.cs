@@ -13,6 +13,8 @@ namespace Nova.Runtime.Core.Scripts
         private const string RenderPassName = nameof(ApplyDistortionPass);
         private const string ProfilingSamplerName = "SrcToDest";
 
+
+        //FOR Commit
         private readonly bool _applyToSceneView;
         private readonly int _distortionBufferPropertyId = Shader.PropertyToID("_ScreenSpaceUvTexture");
         private readonly int _mainTexPropertyId = Shader.PropertyToID("_MainTex");
