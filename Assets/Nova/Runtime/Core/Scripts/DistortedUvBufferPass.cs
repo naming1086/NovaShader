@@ -43,6 +43,7 @@ namespace Nova.Runtime.Core.Scripts
 
             using (new ProfilingScope(cmd, _profilingSampler))
             {
+                //很奇怪的一个点
                 context.ExecuteCommandBuffer(cmd);
                 cmd.Clear();
                 CommandBufferPool.Release(cmd);

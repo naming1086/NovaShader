@@ -20,7 +20,7 @@ namespace Nova.Runtime.Core.Scripts
 
         private DistortedUvBufferPass _distortedUvBufferPass;
 
-        public override void Create()
+        public override void Create()S
         {
             _applyDistortionShader = Shader.Find("Hidden/Nova/Particles/ApplyDistortion");
             if (_applyDistortionShader == null)
@@ -43,8 +43,7 @@ namespace Nova.Runtime.Core.Scripts
             var distortedUvBufferFormat = SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.RGHalf)
                 ? RenderTextureFormat.RGHalf
                 : RenderTextureFormat.DefaultHDR;
-            var distortedUvBuffer = RenderTexture.GetTemporary(cameraTargetDesciptor.width,
-                cameraTargetDesciptor.height, 0, distortedUvBufferFormat);
+            var distortedUvBuffer = RenderTexture.GetTemporary(cameraTargetDesciptor.width, cameraTargetDesciptor.height, 0, distortedUvBufferFormat);
             var distortedUvBufferIdentifier = new RenderTargetIdentifier(distortedUvBuffer);
 
             _distortedUvBufferPass.Setup(distortedUvBufferIdentifier, () => renderer.cameraDepthTarget);
