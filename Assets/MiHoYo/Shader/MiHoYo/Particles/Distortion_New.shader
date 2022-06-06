@@ -35,30 +35,31 @@ Shader "miHoYo/Particles/Distortion_New" {
             "IgnoreProjector" = "True"
         }
 
-        pass
-        {
-            Name "MAIN"
-            Tags
-            {
-                // to fix
-                "LightMode" = "SRPDefaultUnlit"
-            }
+        // pass
+        // {
+        //     Name "MAIN"
+        //     Tags
+        //     {
+        //         // to fix
+        //         // "LightMode" = "SRPDefaultUnlit"
+        //         "LightMode" = "DistortedUvBuffer"
+        //     }
 
-            Blend [_SrcBlendMode] [_DstBlendMode]
-            BlendOp [_BlendOp]
-            ZWrite [_Zwrite]
-            ZTest [_Ztest]
-            Cull [_Cull]
+        //     Blend [_SrcBlendMode] [_DstBlendMode]
+        //     BlendOp [_BlendOp]
+        //     ZWrite [_Zwrite]
+        //     ZTest [_Ztest]
+        //     Cull [_Cull]
 
-            HLSLPROGRAM
+        //     HLSLPROGRAM
  
-            #pragma vertex DistortionNewMainVertex
-            #pragma fragment DistortionNewMainFragment
-            #include "./nx/Distortion_NewInput.hlsl"
-            #include "./nx/Distortion_NewPass.hlsl"
+        //     #pragma vertex DistortionNewMainVertex
+        //     #pragma fragment DistortionNewMainFragment
+        //     #include "./nx/Distortion_NewInput.hlsl"
+        //     #include "./nx/Distortion_NewPass.hlsl"
 
-            ENDHLSL
-        }
+        //     ENDHLSL
+        // }
 
         Pass
         {
@@ -66,7 +67,8 @@ Shader "miHoYo/Particles/Distortion_New" {
             Tags
             {
                 // to fix
-                "LightMode" = "UniversalForward"
+                // "LightMode" = "UniversalForward"
+                "LightMode" = "DistortedUvBuffer"
             }
 
             Blend SrcAlpha OneMinusSrcAlpha, SrcAlpha OneMinusSrcAlpha
