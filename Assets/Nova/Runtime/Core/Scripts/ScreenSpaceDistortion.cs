@@ -20,7 +20,7 @@ namespace Nova.Runtime.Core.Scripts
 
         private DistortedUvBufferPass _distortedUvBufferPass;
 
-        public override void Create()S
+        public override void Create()
         {
             _applyDistortionShader = Shader.Find("Hidden/Nova/Particles/ApplyDistortion");
             if (_applyDistortionShader == null)
